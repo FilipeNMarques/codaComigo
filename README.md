@@ -1,7 +1,7 @@
 # CodaComigo
 
 
-#### O CodaComigo nasceu com uma necessidade de compartilhar as dores, alegrias e conquistas de um desenvolvedor iniciante.
+#### O CodaComigo nasceu com a necessidade de compartilhar as dores, alegrias e conquistas de um desenvolvedor iniciante.
 
 A intenção aqui é ajudar quem assim como eu, está iniciando nesse mundo maravilhoso da programação. 
 
