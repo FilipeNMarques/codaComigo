@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       home: Scaffold(
-        appBar: AppBar(),
         body: HomeWidgets(),
       ),
     );
@@ -22,41 +21,30 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeWidgets extends StatelessWidget {
-  _onPressed() {
-    print("Clidado no item");
-  }
-
-  Widget _listTile() {
-    return ListTile(
-      leading: Icon(Icons.airline_seat_flat),
-      title: Text("Deitado"),
-      subtitle: Text("Na cama"),
-      onTap: _onPressed,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      child: ListView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
-          _listTile(),
+          CircleAvatar(
+            backgroundColor: Colors.amber,
+            child: Text("FM"),
+          ),
+          SizedBox(
+            height: 100,
+          ),
+          CustomCircleAvatar(
+            bc: Colors.teal,
+            size: 60,
+            child: Text(
+              "FM",
+              style: TextStyle(color: Colors.white),
+            ),
+          )
         ],
       ),
     );
