@@ -1,6 +1,6 @@
 const port = 3003;
-
 const express = require("express");
+const dataBase = require("./dataBAse");
 
 const app = express();
 
@@ -12,7 +12,19 @@ app.get("/produtos", (req, res, next) => {
 });
 
 app.get("/produtos", (req, res, next) => {
-  res.send({ name: "Notebook", price: 12343.45 }); //Isso vai converter para JSON
+  res.send(dataBase.getProdutos()); //Isso vai converter para JSON
+});
+
+app.get("/produto/:id", (req, res, next) => {
+  res.send(dataBase.getProduto(req.params.id));
+});
+
+app.post("/produtos", (req, res, next) => {
+  const produto = dataBase.salvarProduto({
+    nome: req.body.name,
+    price: req.body.price
+  });
+  res.send(prduto); // O resultado é um JSON file
 });
 
 app.listen(port, () => {
