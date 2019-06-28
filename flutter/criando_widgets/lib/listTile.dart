@@ -41,22 +41,23 @@ class HomeWidgets extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       child: ListView(
-        scrollDirection: Axis.vertical,
+        scrollDirection: Axis.horizontal,
         children: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.account_balance_wallet,
-              size: 80,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.account_balance_wallet,
-              size: 80,
-            ),
-          ),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
+          _listTile(),
         ],
       ),
     );
