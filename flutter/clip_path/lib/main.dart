@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
-import 'home.dart';
+import 'homeWidget.dart';
 
-void main() => (new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: HomeWidget(),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
       ),
+      home: HomeWidget(),
     );
   }
 }
