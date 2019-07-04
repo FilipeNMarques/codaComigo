@@ -14,7 +14,7 @@ class _HomeSnackState extends State<HomeSnack> {
       key: _scaffoldKey,
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Hello Snackbar"),
+        title: Text("Hello Snackbar and Dialog"),
       ),
       body: Container(
         width: double.infinity,
@@ -23,6 +23,22 @@ class _HomeSnackState extends State<HomeSnack> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Builder(
+              builder: (BuildContext context) {
+                return RaisedButton(
+                  color: Colors.purple,
+                  textColor: Colors.white,
+                  child: Text("Hey Snackbar 2"),
+                  onPressed: () {
+                    final snackbar = SnackBar(
+                      content: Text("Hello from snackbar2! :)"),
+                    );
+                    Scaffold.of(context).showSnackBar(snackbar);
+                    //Nesse caso não vai funcionar porque o Sacaffold está fora do context ainda.
+                  },
+                );
+              },
+            ),
             RaisedButton(
               color: Colors.purple,
               textColor: Colors.white,
@@ -35,10 +51,28 @@ class _HomeSnackState extends State<HomeSnack> {
               },
             ),
             RaisedButton(
-              color: Colors.purple,
               textColor: Colors.white,
-              child: Text("Hey Dialog"),
-              onPressed: () {},
+              color: Colors.purple,
+              onPressed: () {
+                //Call dialog
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text("Hello from Dialog! :)"),
+                        content: Text("Content of dialog"),
+                        actions: <Widget>[
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text("OK"),
+                          )
+                        ],
+                      );
+                    });
+              },
+              child: Text("Hey dialog"),
             )
           ],
         ),
